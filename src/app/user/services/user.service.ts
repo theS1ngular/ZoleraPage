@@ -18,13 +18,13 @@ export class UserService {
 
   login(email: string, password: string) {
     const user: User = { _id: null, email: email, password: password };
-    return this.http.post<{token: string, error: string}>('http://localhost/api/login', user)
+    return this.http.post<{token: string, error: string}>('https://zolera.herokuapp.com/api/login', user)
     .pipe(catchError(this.errorHandler));
   }
 
   register(email: string, password: string) {
   const user: User = { _id: null, email: email, password: password };
-  return this.http.post<{user: object, error: string}>('http://localhost/api/signup', user)
+  return this.http.post<{user: object, error: string}>('https://zolera.herokuapp.com/api/signup', user)
   .pipe(catchError(this.errorHandler));
   }
 
